@@ -52,6 +52,18 @@ form.addEventListener('submit', async evt => {
 
     if (currentPage * PER_PAGE < data.totalHits) {
       showLoadMoreButton();
+    } else {
+      iziToast.show({
+        icon: 'ico-info',
+        iconColor: '#fff',
+        title: 'Info',
+        titleColor: '#fff',
+        message: "We're sorry, but you've reached the end of search results.",
+        messageColor: '#fff',
+        backgroundColor: '#4e75ff',
+        position: 'topRight',
+        timeout: 5000,
+      });
     }
   } catch (err) {
     iziToast.show({
